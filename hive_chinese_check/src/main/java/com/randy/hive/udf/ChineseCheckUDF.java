@@ -1,8 +1,7 @@
-package com.randy;
+package com.randy.hive.udf;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
-import org.apache.hadoop.io.Text;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,14 +14,14 @@ import java.util.regex.Pattern;
 public class ChineseCheckUDF extends UDF {
 
 
-    public Boolean evaluate(Text input) {
-        return isChinese(input.toString());
+    public Boolean evaluate(String input) {
+        return isChinese(input);
     }
 
 
     public static void main(String args[]){
         ChineseCheckUDF helloUDF = new ChineseCheckUDF();
-        boolean rs = helloUDF.evaluate(new Text("훈민정음训民正bai音" ));
+        boolean rs = helloUDF.evaluate("훈민정음训民正bai音" );
         System.out.println(rs);
     }
 
