@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>decipher_installed_pgk</module>
+        <module>hive_chinese_check</module>
     </modules>
 
 
